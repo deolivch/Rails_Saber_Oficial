@@ -1,0 +1,25 @@
+<%= form_tag do %>
+
+	<% content_for :css do%>
+		
+		<link rel="stylesheet" href="/stylesheets/fases.scss">
+
+	<% end %>
+
+
+	   <div class="header clearfix">
+	        <nav>
+	            <ul class="nav nav-pills pull-right">
+	                <li role="presentation" class="active"><%= link_to "Home", controller: "fases", action: "index" %></li>
+	                <li role="presentation"><%= link_to "Sobre", controller: "fases", action: "sobre" %></li>
+	                <li role="presentation"><%= link_to "Contatos", controller: "fases" , action: "contato"%></li>
+	            </ul>
+	        </nav>
+	        
+	        <%= image_tag "logo.ico" %>        
+	    </div>
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/quiz.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+<% end %>

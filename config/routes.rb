@@ -1,7 +1,27 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
+  get 'users/new'
+
   #match 'fases', controller: 'fases' , action: 'index', via: 'get'
   root 'fases#index'
+  #root 'sessions#new'
+
+  resources :users
+
+  get 'sign_in' => 'sessions#new'
+
+  post 'sign_in' => 'sessions#create'
+
+  delete 'sign_out' => 'sessions#destroy'
+
+  get 'fases/index'
+
+  get 'fases/sobre'
+
+  get 'fases/contato'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
