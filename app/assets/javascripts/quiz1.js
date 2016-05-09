@@ -1,3 +1,4 @@
+//-------QUIZ 1-------------
 
 var pontos = 0;
 var total = 4;

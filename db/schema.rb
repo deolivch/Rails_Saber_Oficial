@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20160413220428) do
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "question",   limit: 200
+    t.string   "answer",     limit: 60
+    t.integer  "level",      limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255
     t.string   "email",           limit: 255

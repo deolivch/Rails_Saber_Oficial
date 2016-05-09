@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   get 'fases/sobre'
 
   get 'fases/contato'
+
+  get 'fases/home'
+
+  get 'fases/index2'
+
+  # get '/questions', to: 'question#list'
+  get '/level/:id/questions', to: 'question#list'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

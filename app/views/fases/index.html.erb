@@ -1,29 +1,63 @@
-<div class="container">
+    <header class="titulo-principal">
+        <%= image_tag "logo.png", class: "foto-home"%>
+        <h1>Rails Saber</h1>
+        <p class="subtitulo-principal">Ensinando Ruby</p>
+        <ul class="palavras-home">
+            <li class="palavra-home eficiencia">Eficiência</li>
+            <li class="palavra-home boas-praticas">Boas práticas</li>
+            <li class="palavra-home codigo-limpo">Código limpo</li>
+            <li class="palavra-home html5">Foco no negócio</li>
+            <li class="palavra-home javascript">A favorita das startups</li>
+            <li class="palavra-home acessibilidade">Tipagem forte</li>
+            <li class="palavra-home otimizacoes">Otimizações</li>
+            <li class="palavra-home agilidade">Agilidade</li>
+        </ul>
+</header>
+    <main>
+        <section class="secao-inicio saudacao">
+            <p class="saudacao"><span class="saudacao-inicio">Olá,</span> meu nome é <strong>Rails Saber</strong> <span class="saudacao-ultima-linha">e eu vou te <em>ensinar a linguagem Ruby</em></span></p>
+            
+            <!--%= button_tag "Venha Aprender conosco", controller: "fases", action: "index2" , class: "botao-index" %-->
+            <%= link_to "Venha Aprender conosco", controller: "fases", action: "index2" , class: "botao-index" %>  
 
-<%= render 'form' %>
-    <div class="jumbotron">
+        <section class="secao-inicio blog">
+            <ol>
+                <li class="mais-recente">
+                    <a href="blog.html">Introdução</a>
+                    <p class="inicio-post">
+                       Bem-vindo à nossa plataforma de ensino da linguagem Ruby! Você se imagina um futuro desenvolvedor? O mercado necessita muito de desenvolvedores. Nessa plataforma vamos abordar uma previa da linguagem Ruby, para que você tenha base para futuros estudos, e abaixo terá um link de uma apostila para complementar seu estudo. Está pronto? Vamos lá...
+                    </p>
+                </li>
+                <li>
+                    <a href="blog.html">Tarefa</a>
+                    <p class="inicio-post">
+                      Objetivo é o aluno, após o termino do aprendizado, obter uma boa noção da linguagem Ruby, para que facilite seu entendimento sobre a linguagem Ruby.
+                    </p>
+                </li>
+                <li>
+                    <a href="blog.html">Processo</a>   
+                    <p class="inicio-post">
+                      O aluno vai estudar sobre um conteúdo mesmo terá que responder cada pergunta, sendo que cada pergunta vai ter uma previa explicação antes, e o aluno então poderá responder. Para avançar os níveis, o aluno terá que acertar pelo menos 4 perguntas, assim, tendo certeza que absorveu o conteúdo.
+                    </p>
+                </li>
+                <li>
+                    <a href="blog.html">Avaliação</a>   
+                    <p class="inicio-post">
+                       A plataforma vai avaliar o aluno da seguinte maneira, o método de ensino vai ter perguntas e respostas, sendo que para cada nível as perguntas serão mais difíceis.
+                    </p>
+                </li>
+                <li>
+                    <a href="blog.html">Conclusão</a>   
+                    <p class="inicio-post">
+                     Após o termino do estudo do aluno nessa plataforma, ele terá uma base solida da linguagem Ruby, com conhecimentos em logica de programação, manuseio de textos, números, variáveis, condições para tomada de decisão, etc, para que o mesmo possa seguir o aprendizado a partir de cursos mais avançados e apostilas. O Rails Saber preocupa-se com o aluno, nosso objetivo é que o mesmo seja bem-sucedido profissionalmente. Disponibilizamos apostilas completas para que ele possa estudar também o framework Ralis que agiliza o processo do desenvolvimento.
 
-        <div class="iniciar"><h2>Vamos aprender Logica com Ruby?</h2>
-
-        <p class="lead">Rails Saber tem o intuito de ensinar o básico da linguagem Ruby para as crianças</p>
-        <p> <%= link_to "INICIAR", controller: "sessions", action: "new" %></p>
-        </div>
-
-        <header>
-            <main>
-                
-               
-
-            </main>
-
-        </header>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2016 Rails Saber</p>
+                    </p>
+                </li>
+            </ol>
+            <%= link_to "Apostila Ruby", "https://www.caelum.com.br/apostila-ruby-on-rails/", class: "botao-index"%>
+        </section>
+    </main>
+    <footer>
+        <h2>Vamos conversar? Sua Sugestão é importante para nós.</h2>
+        <p>Você pode entrar em contato conosco <a href="contato.html">por e-mail</a> ou pelo telefone <a href="tel:+5519994515259">(19)994515259</a></p>
     </footer>
-
-</div> <!-- /container -->
-<script src="js/jquery-1.11.0.min.js"></script>
-<script src="js/quiz.js"></script>
-<script src="js/ie10-viewport-bug-workaround.js"></script>

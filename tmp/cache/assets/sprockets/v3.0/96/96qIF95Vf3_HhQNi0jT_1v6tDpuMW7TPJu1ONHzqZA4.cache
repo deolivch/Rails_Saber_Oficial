@@ -1,0 +1,69 @@
+I"�(function() {
+  var init, maximo, ponto, pontos, processar, total;
+
+  pontos = 0;
+
+  total = 0;
+
+  ponto = 1;
+
+  maximo = total + ponto;
+
+  init = function() {
+    console.log('pegando perguntas');
+    $.get('http://localhost:3000/level/3/questions', function(data) {
+      var answer, i, id, template;
+      total = data.length;
+      i = 0;
+      while (i < total) {
+        id = data[i].id;
+        answer = data[i].answer;
+        sessionStorage.setItem('a' + id, answer);
+        template = '<form class="questionform" id="q' + id + '" data-question="' + id + '">';
+        template += '<h3>' + data[i].question + '</h3>';
+        template += '<input type="text" name="q' + id + '"/>';
+        template += '<button id="enviar">Enviar</button>';
+        template += '</form>';
+        $('#question-list').append(template);
+        i++;
+      }
+      $('.questionform').hide();
+      $('#0').click(function() {
+        $('.iniciar').hide();
+        $('[data-question]:first').fadeIn(300);
+        return false;
+      });
+      $('.questionform #enviar').click(function() {
+        var current, next;
+        current = $(this).parents('form:first').data('question');
+        next = $(this).parents('form:first').data('question') + 1;
+        $('.questionform').hide();
+        $('#q' + next + '').fadeIn(300);
+        $('#q' + next + '').focus();
+        processar(current);
+        return false;
+      });
+    });
+  };
+
+  processar = function(n) {
+    var enviar, last_question;
+    last_question = $('form[data-question]:last').data('question');
+    enviar = $('input[name=q' + n + ']').val();
+    if (enviar === sessionStorage.getItem('a' + n + '')) {
+      pontos++;
+    }
+    if (last_question === n) {
+      if (pontos < total) {
+        $('#resultado').html('<h3>Você acertou ' + pontos + ' questões de ' + total + '!</h3>' + '<h4>É necessário acertar todas para seguir adiante</h4>' + '<a href="fase3.html">Responder novamente</a>');
+      } else {
+        $('#resultado').html('<h3>Parabéns você acertou TODAS as questões!!!</h3>' + '<h4>@@@@ TEXTO PARA FINAL DO TESTE @@@@</h4>');
+      }
+    }
+    return false;
+  };
+
+  window.addEventListener('load', init, false);
+
+}).call(this);
+:ET

@@ -1,7 +1,42 @@
-<html>
-    <body>
-		  <h3>Perfil de <%= @user.name %> </h3>
-  		  <%= @user.email %>
-  	</body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            
+            <%= image_tag "logo.ico", class: "" %>
+            <h1><%= "VAMOR APRENDER" %></h1>
+        </nav>
 
-</html>
+        <!--img src="imagens/logo.ico"-->
+    </div>
+
+    <div class="jumbotron">
+
+        <div class="iniciar"><h2>Vamos aprender Logica com Ruby?</h2>
+
+        <p class="lead">Rails Saber tem o intuito de ensinar o básico da linguagem Ruby</p>
+        <p style="text-align: justify">Tudo que manipulamos em RUBY é objeto, até mesmo um resultado de um processo. E em Ruby, até objetos possuem métodos, ações. Para que possamos utilizar este método devemos usar o que chamamos de construtores. O Construtor padrão em RUBY recebe a sintaxe new.</p>
+        <p style="text-align: justify; color: red; font-style: bold">fusion = Carro.new("Ford")<br />polo = Carro.new("Volkswagem")</p>
+        <br /><br />
+        <p style="text-align: justify">Os Métodos são chamados por meio do envio de mensagem a um objeto. Essa Mensagem contém o nome do método que deve ser executado junto com os seus parâmetros. Assim que o objeto recebe a mensagem ele procura pelo método correspondente, caso o encontre ele o executa.</p>
+        <p style="text-align: justify">Exemplo: Método <strong>puts</strong>. O <strong>puts</strong> tem a função de imprimir os argumentos que recebe na saída padrão do sistema.</p>
+        <p style="text-align: justify; color: white; background-color: rgb(0,128,0); font-style: bold; margin-botton: 0px">puts "Este programa foi escrito em Ruby!"</p>
+        <p style="text-align: justify; color: white; background-color: rgb(0,128,0); font-style: bold">$ Este programa foi escrito em Ruby</p>
+        <p>Agora é com você!!<br />Responda as perguntas e siga em frente!</p>
+        <p><a class="btn btn-lg btn-success" href="#" id="0" role="button">Iniciar</a></p>
+        </div>
+
+        <header>
+            <main id="question-list">
+            
+                <div class="resultado"></div>
+                <br>
+            </main>
+
+        </header>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2016 Rails Saber</p>
+    </footer>
+
+</div> <!-- /container -->

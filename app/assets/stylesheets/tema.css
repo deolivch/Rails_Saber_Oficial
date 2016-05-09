@@ -1,5 +1,6 @@
-body {
-  #background: url(tema.jpgs);
+.users {
+  display: block;
+  background: url(tema.jpg);
   background-size: cover;
   padding-top: 20px;
   padding-bottom: 20px;
